@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+   <identifier>c021bafb-a4b1-498a-9ce6-da3ec9d8850e</identifier>
+   <sender>no-reply@crisissuite.com</sender>
+   <sent>2019-01-07T11:54:32+01:00</sent>
+   <status>Exercise</status>
+   <msgType>Alert</msgType>
+   <scope>Private</scope>
+   <code>crisissuite_sitrep</code>
+   <references />
+   <info>
+      <category>Infra</category>
+      <event>publish_sitrep</event>
+      <urgency>Immediate</urgency>
+      <severity>Severe</severity>
+      <certainty>Observed</certainty>
+      <expires>2019-01-07T12:54:32+01:00</expires>
+      <headline>CAP example</headline>
+      <web>http://localhost:8000</web>
+      <parameter>
+         <valueName>I am at</valueName>
+         <value>A505-#</value>
+      </parameter>
+      <parameter>
+         <valueName>I see</valueName>
+         <value>A huge fire</value>
+      </parameter>
+      <parameter>
+         <valueName>I forsee</valueName>
+         <value>An even bigger fire</value>
+      </parameter>
+      <parameter>
+         <valueName>I do</valueName>
+         <value>Waiting for helping troops</value>
+      </parameter>
+      <parameter>
+         <valueName>I request</valueName>
+         <value>HELP</value>
+      </parameter>
+      <area>
+         <areaDesc>SitRep Origin</areaDesc>
+         <circle>52.10165085954392,4.262638986110686 0</circle>
+      </area>
+   </info>
+</alert>

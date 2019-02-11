@@ -1,0 +1,37 @@
+        xml = '<?xml version="1.0" encoding="UTF-8"?>' \
+              '<alert xmlns = "urn:oasis:names:tc:emergency:cap:1.2">' \
+              '  <identifier>{uuid}</identifier>' \
+              '  <sender>{sender_email}</sender>' \
+              '  <sent>{sent_timestamp}</sent>' \
+              '  <status>Exercise</status>' \
+              '  <msgType>{msg_type}</msgType>' \
+              '  <scope>Private</scope>' \
+              '  <code>crisissuite_sitrep</code>' \
+              '  <references>{references}</references>' \
+              '  <info>' \
+              '    <category>{category}</category>' \
+              '    <event>publish_sitrep</event>' \
+              '    <urgency>Immediate</urgency>' \
+              '    <severity>Severe</severity>' \
+              '    <certainty>Observed</certainty>' \
+              '	   <expires>{expires_timestamp}</expires>' \
+              '    <headline>{headline}</headline>' \
+              '    <web>{current_host}</web>' \
+              '    {parameters}' \
+              '    <area>' \
+              '      <areaDesc>SitRep Origin</areaDesc>' \
+              '	     {area_xml}' \
+              '    </area>' \
+              '  </info>' \
+              '</alert>'.format(uuid=uuid,
+                                sender_email=self.sender_email,
+                                sent_timestamp=self.iso_format_without_ms(timezone.localtime(sent_datetime)),
+                                msg_type=msg_type,
+                                references=previous_msg_reference,
+                                category=category,
+                                expires_timestamp=self.iso_format_without_ms(
+                                    timezone.localtime(sent_datetime) + timedelta(hours=1)),
+                                headline=escape(headline),
+                                current_host=self.current_host,
+                                parameters=parameters_xml,
+                                area_xml=area_xml)
